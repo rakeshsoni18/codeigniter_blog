@@ -18,8 +18,12 @@ class AuthController extends BaseController
         $this->session = session();
     }
 
-    public function login(): string
+    public function login()
     {
+        if (session()->get('loggedIn')) {
+            return redirect()->route('homepage');
+        }
+
         return view('login');
     }
 
@@ -36,7 +40,7 @@ class AuthController extends BaseController
             ]);
         }
 
-        $email = $this->request->getVar('email');
+        $email    = $this->request->getVar('email');
         $password = $this->request->getVar('password');
 
         $user = $this->user->where('email', $email)->first();
@@ -56,7 +60,7 @@ class AuthController extends BaseController
 
                 $this->session->set($sessionData);
 
-                return redirect()->to('admin/blog');
+                return redirect()->to('admin');
             }
 
             session()->setFlashdata('failed', 'Failed! incorrect password');

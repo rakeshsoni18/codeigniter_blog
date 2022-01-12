@@ -27,7 +27,8 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" name="password" class="form-control <?php if ($validation->getError('password')) : ?>is-invalid <?php endif ?>" placeholder="Enter password">
+                    <i class="fa fa-eye-slash showOrHide hide"></i>
+                    <input type="password" name="password" class="form-control password <?php if ($validation->getError('password')) : ?>is-invalid <?php endif ?>" placeholder="Enter password">
                     <?php if ($validation->getError('password')) : ?>
                         <div class="invalid-feedback">
                             <?= $validation->getError('password') ?>
@@ -42,3 +43,5 @@
     </div>
 </div>
 <?php $this->endSection() ?>
+
+

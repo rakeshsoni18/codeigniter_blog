@@ -11,11 +11,11 @@
                 <table class="table table-bordered">
                     <thead>
                     <tr>
-                        <td>SN#</td>
-                        <td>Image</td>
-                        <td>Title</td>
-                        <td>Description</td>
-                        <td width="13%">Action</td>
+                        <th>SN#</th>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th width="13%">Action</th>
                     </tr>
                     </thead>
                     <tbody>

@@ -53,7 +53,7 @@ class HomeController extends BaseController
        return "strong";
     }
 
-    public function search()
+    public function search(): string
     {
        $q = $this->request->getVar('q');
 

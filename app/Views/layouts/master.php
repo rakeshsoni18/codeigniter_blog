@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
     <?= link_tag('public/assets/css/style.css') ?>
 
@@ -15,7 +16,9 @@
 <body>
 <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="<?php echo base_url() ?>">Navbar</a>
+        <a class="navbar-brand" href="<?php echo base_url() ?>">
+            <img class="logo_img" src="<?= base_url('public/assets/image/logo_icon.png') ?>" alt="">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,9 +34,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo base_url('contact') ?>">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url('admin/blog') ?>">Post Blog</a>
-                </li>
+
+                <?php if (session()->get('loggedIn')) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url('admin') ?>">Dashboard</a>
+                    </li>
+                <?php endif; ?>
+
                 <li class="nav-item">
                     <?php if (!session()->get('loggedIn')) : ?>
                         <a class="nav-link" href="<?php echo base_url('login') ?>">Login</a>

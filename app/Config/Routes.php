@@ -38,9 +38,11 @@ $routes->get('search', 'HomeController::search', ['as' => 'search']);
 $routes->get('/blog/(:any)', 'HomeController::show/$1');
 
 $routes->group('admin', ['filter' => 'auth_filter'], function ($routes) {
+    $routes->get('/', 'Admin\DashboardController::index');
     // If you need only a specific method call only within route
     // ['only' => ['index', 'create', 'show', 'update']]
     $routes->resource('blog', ['controller' => 'Admin\BlogController']);
+    $routes->resource('category', ['controller' => 'Admin\CategoryController']);
 });
 
 $routes->get('/about', 'PageController::about');
