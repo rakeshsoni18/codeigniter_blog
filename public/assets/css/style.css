@@ -1,0 +1,28 @@
+.post_image {
+    max-width: 120px;
+    margin-right: 10px;
+}
+
+.post_image img {
+    width: 100%;
+    height: 120px;
+}
+
+.single_post_image {
+    max-width: 750px;
+}
+.single_post_image img {
+    width: 100%;
+    height: 400px;
+}
+
+.post_description {
+    text-align: justify;
+}
+
+.pagination li a {
+    color: #ffffff;
+    padding: 5px;
+    background: #31708f;
+}
+
